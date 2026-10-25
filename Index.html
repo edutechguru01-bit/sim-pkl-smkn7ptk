@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIM PKL - SMKN 7 Pontianak</title>
+    <!-- Bootstrap 5 CSS & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+      html { scroll-behavior: smooth; }
+      .hero-section {
+        background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+        color: white;
+        padding: 80px 0;
+      }
+      .feature-card { transition: transform 0.2s; }
+      .feature-card:hover { transform: translateY(-5px); }
+      .badge-kuota { font-size: 0.75rem; margin: 1px; }
+
+      .bg-purple, .style-purple { color: #6f42c1 !important; }
+      .bg-purple { background-color: #6f42c1 !important; color: white !important; }
+      
+      .bg-pink, .style-pink { color: #e83e8c !important; }
+      .bg-pink { background-color: #e83e8c !important; color: white !important; }
+      
+      .fs-8 { font-size: 0.8rem; }
+      .col-nowrap { white-space: nowrap; }
+
+      /* Banner Wajib Cetak Surat Pernyataan */
+      .banner-pernyataan {
+        background: #fff3cd;
+        border-left: 6px solid #ffc107;
+        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="javascript:void(0)" onclick="navigateTo('landing-page')">
+          <i class="bi bi-mortarboard-fill me-2"></i>SIM PKL SMKN 7 Pontianak
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="javascript:void(0)" onclick="navigateTo('landing-page')">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)" onclick="navigateTo('landing-page', 'informasi')">Informasi PKL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0)" onclick="navigateTo('landing-page', 'jurusan')">Jurusan</a>
+            </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0" id="nav-user-area">
+              <button class="btn btn-light fw-semibold text-primary" onclick="openLoginModal()">
+                <i class="bi bi-box-arrow-in-right me-1"></i> Masuk / Login
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- LANDING PAGE -->
+    <div id="landing-page">
+      <section class="hero-section text-center">
+        <div class="container">
+          <h1 class="display-4 fw-bold mb-3">Sistem Informasi Manajemen PKL</h1>
+          <p class="lead mb-4 col-md-8 mx-auto">Portal Resmi Pelaksanaan Praktik Kerja Lapangan (PKL) SMK Negeri 7 Pontianak.</p>
+          <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-warning btn-lg fw-bold px-4 shadow" onclick="openLoginModal()">
+              <i class="bi bi-person-circle me-2"></i>Masuk Portal PKL
+            </button>
+            <button onclick="navigateTo('landing-page', 'informasi')" class="btn btn-outline-light btn-lg px-4">Pelajari Alur PKL</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALUR PELAKSANAAN PKL -->
+      <section id="informasi" class="py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Alur Pelaksanaan PKL</h2>
+            <p class="text-muted">Tahapan pelaksanaan Praktik Kerja Lapangan SMKN 7 Pontianak</p>
+          </div>
+          <div class="row g-4 text-center justify-content-center">
+            <div class="col-md-4 col-lg-3">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-box-arrow-in-right"></i></div>
+                  <h5 class="card-title fw-bold">1. Login Siswa</h5>
+                  <p class="card-text text-muted fs-7">Siswa login menggunakan username dan password masing-masing.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-person-gear"></i></div>
+                  <h5 class="card-title fw-bold">2. Update Profil</h5>
+                  <p class="card-text text-muted fs-7">Melengkapi identitas diri dan update password.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-calendar-check"></i></div>
+                  <h5 class="card-title fw-bold">3. Pendaftaran PKL</h5>
+                  <p class="card-text text-muted fs-7">Siswa mendaftar tempat PKL sesuai kuota per jurusan.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-building-check"></i></div>
+                  <h5 class="card-title fw-bold">4. Pemilihan DUDI</h5>
+                  <p class="card-text text-muted fs-7">Memilih lokasi DUDI mitra yang tersedia.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-file-earmark-pdf"></i></div>
+                  <h5 class="card-title fw-bold">5. Surat Permohonan</h5>
+                  <p class="card-text text-muted fs-7">Unduh Surat Permohonan resmi saat kuota terpenuhi.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-person-badge"></i></div>
+                  <h5 class="card-title fw-bold">6. Guru Pembimbing</h5>
+                  <p class="card-text text-muted fs-7">Mendapatkan Guru Pembimbing yang ditentukan sekolah.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm p-3 feature-card">
+                <div class="card-body">
+                  <div class="fs-1 text-primary mb-3"><i class="bi bi-journal-text"></i></div>
+                  <h5 class="card-title fw-bold">7. Jurnal Harian</h5>
+                  <p class="card-text text-muted fs-7">Mengisi jurnal harian selama masa kegiatan PKL.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAM KEAHLIAN -->
+      <section id="jurusan" class="bg-white py-5">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Program Keahlian SMKN 7 Pontianak</h2>
+            <p class="text-muted">Kompetensi keahlian yang disiapkan untuk menjawab kebutuhan dunia kerja dan industri</p>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4">
+              <div class="p-4 border rounded shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-laptop fs-2 text-warning me-3"></i>
+                  <h5 class="fw-bold mb-0">Rekayasa Perangkat Lunak (RPL)</h5>
+                </div>
+                <p class="text-muted fs-7 mb-0">Fokus pada pengembangan perangkat lunak, pembuatan aplikasi berbasis web dan mobile, pengelolaan basis data, serta pemrograman komputer mutakhir.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="p-4 border rounded shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-diagram-3 fs-2 text-primary me-3"></i>
+                  <h5 class="fw-bold mb-0">Teknik Komputer & Jaringan (TKJ)</h5>
+                </div>
+                <p class="text-muted fs-7 mb-0">Mempelajari perakitan komputer, instalasi dan pemeliharaan jaringan internet, konfigurasi server, serta sistem keamanan siber (cyber security).</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="p-4 border rounded shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-calculator fs-2 style-pink me-3"></i>
+                  <h5 class="fw-bold mb-0">Akuntansi & Keuangan Lembaga (AKL)</h5>
+                </div>
+                <p class="text-muted fs-7 mb-0">Menguasai pencatatan transaksi keuangan, pembukuan, perpajakan, penyusunan laporan keuangan lembaga, serta sistem akuntansi berbasis digital.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="p-4 border rounded shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-palette fs-2 style-purple me-3"></i>
+                  <h5 class="fw-bold mb-0">Desain Komunikasi Visual (DKV)</h5>
+                </div>
+                <p class="text-muted fs-7 mb-0">Mengembangkan kemampuan desain grafis, fotografi, videografi, teknik animasi, branding, serta pembuatan konten media kreatif digital.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="p-4 border rounded shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-tools fs-2 text-danger me-3"></i>
+                  <h5 class="fw-bold mb-0">Teknik Pengelasan (T.LAS)</h5>
+                </div>
+                <p class="text-muted fs-7 mb-0">Mempelajari teknik pengelasan industri, fabrikasi logam, pembacaan gambar teknik, serta spesifikasi keselamatan kerja konstruksi pengelasan.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="p-4 border rounded shadow-sm h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-bicycle fs-2 text-dark me-3"></i>
+                  <h5 class="fw-bold mb-0">Teknik Sepeda Motor (TSM)</h5>
+                </div>
+                <p class="text-muted fs-7 mb-0">Fokus pada perawatan, pemeliharaan, perbaikan sistem mesin, kelistrikan, serta teknik mekanik otomotif khusus kendaraan sepeda motor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+          <p class="mb-1 fs-7">&copy; 2026 SIM PKL SMK Negeri 7 Pontianak.</p>
+          <p class="mb-0 fs-8 text-white-50">Aplikasi ini dibuat oleh <strong>Edutech Guru</strong></p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div id="dashboard-page" class="container my-5" style="display: none;">
+      <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
+        <h3 class="fw-bold mb-0" id="dashboard-title">Dashboard SIM PKL</h3>
+        <button class="btn btn-outline-secondary btn-sm" onclick="navigateTo('landing-page')">
+          <i class="bi bi-arrow-left me-1"></i> Kembali ke Beranda
+        </button>
+      </div>
+
+      <div id="content-area"></div>
+    </div>
+
+    <!-- MODAL EDIT AKUN / PROFIL GLOBAL -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title fw-bold"><i class="bi bi-person-gear me-2"></i>Pengaturan Akun & Profil</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <form id="formGlobalAkun" class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fs-7 fw-semibold">Nama Lengkap</label>
+                <input type="text" class="form-control form-control-sm" id="accNama" value="" disabled>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fs-7 fw-semibold">Username / Email (Login)</label>
+                <input type="email" class="form-control form-control-sm" id="accEmail" value="" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fs-7 fw-semibold">Password Baru</label>
+                <input type="password" class="form-control form-control-sm" id="accPassword" value="" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fs-7 fw-semibold">Nomor WhatsApp / HP (Diawali 0)</label>
+                <input type="text" class="form-control form-control-sm" id="accNoHp" value="" placeholder="08xxxxxxxxxx">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fs-7 fw-semibold">Jenis Kelamin</label>
+                <select class="form-select form-select-sm" id="accJK">
+                  <option value="L">Laki-laki (L)</option>
+                  <option value="P">Perempuan (P)</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fs-7 fw-semibold">Alamat Rumah / Instansi</label>
+                <input type="text" class="form-control form-control-sm" id="accAlamat" value="" placeholder="Alamat...">
+              </div>
+              <div class="col-12 text-end mt-4">
+                <button type="button" class="btn btn-secondary btn-sm me-2" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" id="btnSimpanAkunGlobal" class="btn btn-primary btn-sm fw-bold">
+                  <i class="bi bi-save me-1"></i> Update Username & Password
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL EDIT TEMPAT PKL & KUOTA -->
+    <div class="modal fade" id="editTempatModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-warning text-dark">
+            <h5 class="modal-title fw-bold"><i class="bi bi-pencil-square me-2"></i>Edit Tempat PKL & Kuota</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <form id="formEditTempatModal">
+              <input type="hidden" id="editTmpId">
+              <div class="mb-2"><label class="form-label fs-7 fw-semibold">Nama Perusahaan / Instansi</label><input type="text" id="editTmpNama" class="form-control" required></div>
+              <div class="mb-2"><label class="form-label fs-7 fw-semibold">Alamat Lengkap</label><textarea id="editTmpAlamat" class="form-control" rows="2" required></textarea></div>
+              <div class="mb-2"><label class="form-label fs-7 fw-semibold">Kontak Person / No HP</label><input type="text" id="editTmpKontak" class="form-control" placeholder="08xxxxxxxxxx" required></div>
+              
+              <label class="form-label fs-7 fw-semibold text-primary mt-2">Alokasi Kuota per Jurusan:</label>
+              <div class="row g-2 mb-3">
+                <div class="col-4"><label class="fs-7">RPL</label><input type="number" id="editTmpRPL" class="form-control form-control-sm" value="0"></div>
+                <div class="col-4"><label class="fs-7">TKJ</label><input type="number" id="editTmpTKJ" class="form-control form-control-sm" value="0"></div>
+                <div class="col-4"><label class="fs-7">AKL</label><input type="number" id="editTmpAKL" class="form-control form-control-sm" value="0"></div>
+                <div class="col-4"><label class="fs-7">TLAS</label><input type="number" id="editTmpTLAS" class="form-control form-control-sm" value="0"></div>
+                <div class="col-4"><label class="fs-7">TSM</label><input type="number" id="editTmpTSM" class="form-control form-control-sm" value="0"></div>
+                <div class="col-4"><label class="fs-7">DKV</label><input type="number" id="editTmpDKV" class="form-control form-control-sm" value="0"></div>
+              </div>
+
+              <div class="text-end mt-4">
+                <button type="button" class="btn btn-secondary btn-sm me-2" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" id="btnUpdateTempatSubmit" class="btn btn-warning btn-sm fw-bold">
+                  <i class="bi bi-check-circle me-1"></i> Simpan Perubahan Tempat
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL LOGIN -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title fw-bold"><i class="bi bi-shield-lock me-2"></i>Login SIM PKL</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+            <form id="formLoginModal">
+              <div class="mb-3">
+                <label class="form-label fw-semibold">Alamat Email / Username</label>
+                <input type="email" id="loginEmail" class="form-control" required placeholder="nama@smkn7ptk.sch.id">
+              </div>
+              <div class="mb-4">
+                <label class="form-label fw-semibold">Password</label>
+                <input type="password" id="loginPassword" class="form-control" required placeholder="••••••••">
+              </div>
+              <button type="submit" id="btnLoginSubmit" class="btn btn-primary w-100 fw-bold py-2">Masuk</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      let userProfile = null;
+      let loginModalObj = null;
+      let profileModalObj = null;
+      let editTempatModalObj = null;
+      let cachedTempatList = [];
+
+      document.addEventListener("DOMContentLoaded", function() {
+        loginModalObj = new bootstrap.Modal(document.getElementById('loginModal'));
+        profileModalObj = new bootstrap.Modal(document.getElementById('profileModal'));
+        editTempatModalObj = new bootstrap.Modal(document.getElementById('editTempatModal'));
+        
+        let formLogin = document.getElementById("formLoginModal");
+        if (formLogin) {
+          formLogin.addEventListener("submit", handleFormLogin);
+        }
+
+        let formEditTmp = document.getElementById("formEditTempatModal");
+        if (formEditTmp) {
+          formEditTmp.addEventListener("submit", handleFormUpdateTempat);
+        }
+
+        let savedUser = localStorage.getItem("sim_pkl_user");
+        if (savedUser) {
+          userProfile = JSON.parse(savedUser);
+          updateNavbarSession();
+        }
+      });
+
+      function navigateTo(sectionId, targetHash) {
+        document.getElementById('landing-page').style.display = (sectionId === 'landing-page') ? 'block' : 'none';
+        document.getElementById('dashboard-page').style.display = (sectionId === 'dashboard-page') ? 'block' : 'none';
+        
+        if (sectionId === 'landing-page' && targetHash) {
+          setTimeout(() => {
+            let el = document.getElementById(targetHash);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        } else if (sectionId === 'landing-page') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      function openLoginModal() {
+        if (userProfile) {
+          navigateTo('dashboard-page');
+          renderDashboard(userProfile);
+        } else {
+          document.getElementById("loginAlert").classList.add("d-none");
+          loginModalObj.show();
+        }
+      }
+
+      function openProfileModal() {
+        if (!userProfile) return;
+        document.getElementById("accNama").value = userProfile.nama || '';
+        document.getElementById("accEmail").value = userProfile.email || '';
+        document.getElementById("accPassword").value = userProfile.password || '';
+        document.getElementById("accNoHp").value = userProfile.noHp || '';
+        document.getElementById("accJK").value = userProfile.jenisKelamin || 'L';
+        document.getElementById("accAlamat").value = userProfile.alamatRumah || '';
+
+        let form = document.getElementById("formGlobalAkun");
+        form.onsubmit = function(e) {
+          e.preventDefault();
+          let btn = document.getElementById("btnSimpanAkunGlobal");
+          btn.disabled = true;
+          btn.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Menyimpan...`;
+
+          let data = {
+            userId: userProfile.userId,
+            email: document.getElementById("accEmail").value.trim(),
+            password: document.getElementById("accPassword").value.trim(),
+            jenisKelamin: document.getElementById("accJK").value,
+            alamatRumah: document.getElementById("accAlamat").value.trim(),
+            noHp: document.getElementById("accNoHp").value.trim()
+          };
+
+          google.script.run.withSuccessHandler(res => {
+            btn.disabled = false;
+            btn.innerHTML = `<i class="bi bi-save me-1"></i> Update Username & Password`;
+            if (res.status === 'Success') {
+              alert("Pengaturan akun berhasil diperbarui!");
+              userProfile = res.user;
+              localStorage.setItem("sim_pkl_user", JSON.stringify(userProfile));
+              profileModalObj.hide();
+              updateNavbarSession();
+              renderDashboard(userProfile);
+            } else {
+              alert("Gagal memperbarui akun: " + res.message);
+            }
+          }).updateProfilSiswa(data);
+        };
+
+        profileModalObj.show();
+      }
+
+      function handleFormLogin(e) {
+        e.preventDefault();
+        let email = document.getElementById("loginEmail").value;
+        let pass = document.getElementById("loginPassword").value;
+        let btn = document.getElementById("btnLoginSubmit");
+        let alertBox = document.getElementById("loginAlert");
+
+        btn.disabled = true;
+        btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span> Memproses...`;
+        alertBox.classList.add("d-none");
+
+        google.script.run
+          .withSuccessHandler(function(res) {
+            btn.disabled = false;
+            btn.innerText = "Masuk";
+
+            if (res.success) {
+              userProfile = res.user;
+              localStorage.setItem("sim_pkl_user", JSON.stringify(userProfile));
+              loginModalObj.hide();
+              updateNavbarSession();
+              navigateTo('dashboard-page');
+              renderDashboard(userProfile);
+            } else {
+              alertBox.innerText = res.message;
+              alertBox.classList.remove("d-none");
+            }
+          })
+          .withFailureHandler(function(err) {
+            btn.disabled = false;
+            btn.innerText = "Masuk";
+            alertBox.innerText = "Error: " + err.message;
+            alertBox.classList.remove("d-none");
+          })
+          .loginUser(email, pass);
+      }
+
+      function handleLogout() {
+        if (confirm("Apakah Anda yakin ingin keluar?")) {
+          userProfile = null;
+          localStorage.removeItem("sim_pkl_user");
+          document.getElementById("nav-user-area").innerHTML = `
+            <button class="btn btn-light fw-semibold text-primary" onclick="openLoginModal()">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Masuk / Login
+            </button>
+          `;
+          navigateTo('landing-page');
+        }
+      }
+
+      function updateNavbarSession() {
+        if (userProfile) {
+          document.getElementById("nav-user-area").innerHTML = `
+            <div class="dropdown">
+              <button class="btn btn-light dropdown-toggle fw-semibold" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-person-circle me-1 text-primary"></i> ${userProfile.nama}
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow">
+                <li><span class="dropdown-item-text text-muted fs-7">Role: <strong>${userProfile.role}</strong> (${userProfile.jurusan || '-'})</span></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-primary" href="javascript:void(0)" onclick="navigateTo('dashboard-page'); renderDashboard(userProfile);"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+                <li><a class="dropdown-item text-dark" href="javascript:void(0)" onclick="openProfileModal()"><i class="bi bi-person-gear me-2"></i>Update Profil / Akun</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item text-danger" href="javascript:void(0)" onclick="handleLogout()"><i class="bi bi-box-arrow-right me-2"></i>Keluar / Logout</a></li>
+              </ul>
+            </div>
+          `;
+        }
+      }
+
+      function renderDashboard(user) {
+        let content = document.getElementById("content-area");
+        let title = document.getElementById("dashboard-title");
+
+        // === DASHBOARD WAKA ===
+        if (user.role === 'Waka') {
+          title.innerText = "Dashboard Waka - Data Tempat PKL & Pembimbing";
+          content.innerHTML = `
+            <div class="card shadow-sm border-0 p-4 mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0"><i class="bi bi-building me-2"></i>Data Tempat PKL & Guru Pembimbing</h5>
+                <div class="w-50">
+                  <input type="text" id="searchWakaCard" class="form-control" placeholder="Cari Tempat PKL, Guru Pembimbing, atau Siswa..." onkeyup="filterWakaCards()">
+                </div>
+              </div>
+              <div id="containerWakaCards" class="row g-4">
+                <div class="col-12 text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Memuat data kelompok PKL...</p></div>
+              </div>
+            </div>
+            <div id="areaFormLaporanMasalah"></div>
+          `;
+          loadWakaData();
+          renderSectionLaporanMasalah(user);
+
+        // === DASHBOARD PANITIA PKL ===
+        } else if (user.role === 'Panitia PKL') {
+          title.innerText = "Dashboard Panitia PKL";
+          content.innerHTML = `
+            <ul class="nav nav-pills mb-4" id="panitiaTab" role="tablist">
+              <li class="nav-item"><button class="nav-link active fw-bold" data-bs-toggle="tab" data-bs-target="#tab-p-verifikasi"><i class="bi bi-patch-check me-1"></i> Verifikasi Pengajuan</button></li>
+              <li class="nav-item"><button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tab-p-tempat"><i class="bi bi-buildings me-1"></i> Tambah Tempat PKL</button></li>
+              <li class="nav-item"><button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tab-p-plotting"><i class="bi bi-person-gear me-1"></i> Plotting Guru Pembimbing</button></li>
+              <li class="nav-item"><button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tab-p-surat"><i class="bi bi-printer me-1"></i> Cetak Dokumen Surat</button></li>
+            </ul>
+
+            <div class="tab-content">
+              <!-- VERIFIKASI -->
+              <div class="tab-pane fade show active" id="tab-p-verifikasi">
+                <div class="card shadow-sm border-0">
+                  <div class="card-header bg-warning text-dark fw-bold">Verifikasi Pengajuan Tempat PKL Siswa</div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-hover align-middle mb-0">
+                        <thead><tr><th>Nama Siswa</th><th>Kelas</th><th>Nama Tempat PKL</th><th>Alamat Tempat PKL</th><th>Status</th><th>Aksi</th></tr></thead>
+                        <tbody id="bodyTabelVerifikasiPanitia"><tr><td colspan="6" class="text-center py-3">Memuat pengajuan...</td></tr></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TEMPAT PKL -->
+              <div class="tab-pane fade" id="tab-p-tempat">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-success text-white fw-bold">Tambah Tempat PKL & Kuota</div>
+                      <div class="card-body">
+                        <form id="formTempatPanitia">
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Nama Perusahaan / Instansi</label><input type="text" id="tmpNamaP" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Alamat Lengkap</label><textarea id="tmpAlamatP" class="form-control" rows="2" required></textarea></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Kontak Person / No HP</label><input type="text" id="tmpKontakP" class="form-control" placeholder="08xxxxxxxxxx" required></div>
+                          <label class="form-label fs-7 fw-semibold text-primary mt-2">Alokasi Kuota per Jurusan:</label>
+                          <div class="row g-2 mb-3">
+                            <div class="col-4"><label class="fs-7">RPL</label><input type="number" id="tmpRPLP" class="form-control form-control-sm" value="0"></div>
+                            <div class="col-4"><label class="fs-7">TKJ</label><input type="number" id="tmpTKJP" class="form-control form-control-sm" value="0"></div>
+                            <div class="col-4"><label class="fs-7">AKL</label><input type="number" id="tmpAKLP" class="form-control form-control-sm" value="0"></div>
+                            <div class="col-4"><label class="fs-7">TLAS</label><input type="number" id="tmpTLASP" class="form-control form-control-sm" value="0"></div>
+                            <div class="col-4"><label class="fs-7">TSM</label><input type="number" id="tmpTSMP" class="form-control form-control-sm" value="0"></div>
+                            <div class="col-4"><label class="fs-7">DKV</label><input type="number" id="tmpDKVP" class="form-control form-control-sm" value="0"></div>
+                          </div>
+                          <button type="submit" class="btn btn-success w-100 fw-bold">Simpan Data DUDI</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-dark text-white fw-bold">Data Tempat PKL</div>
+                      <div class="card-body p-0">
+                        <div class="table-responsive">
+                          <table class="table table-striped align-middle mb-0">
+                            <thead><tr><th>Instansi</th><th>Alamat & Kontak</th><th>Rincian Kuota</th><th>Aksi</th></tr></thead>
+                            <tbody id="bodyTabelTempatPanitia"><tr><td colspan="4" class="text-center py-3">Memuat...</td></tr></tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- PLOTTING -->
+              <div class="tab-pane fade" id="tab-p-plotting">
+                <div class="card shadow-sm border-0 p-4 mb-4">
+                  <h5 class="fw-bold mb-3"><i class="bi bi-person-plus me-2"></i>Penugasan Guru Pembimbing ke Lokasi PKL</h5>
+                  <form id="formPlottingPanitia" class="row g-3">
+                    <div class="col-md-6"><label class="form-label fw-semibold">Pilih Guru Pembimbing</label><select class="form-select" id="plotGuruP" required><option value="">Memuat Guru...</option></select></div>
+                    <div class="col-md-6"><label class="form-label fw-semibold">Pilih Tempat PKL (DUDI)</label><select class="form-select" id="plotTempatP" required><option value="">Memuat Tempat...</option></select></div>
+                    <div class="col-12 mt-4"><button type="submit" class="btn btn-primary fw-bold px-4"><i class="bi bi-check-circle me-1"></i> Tetapkan Guru Pembimbing</button></div>
+                  </form>
+                </div>
+
+                <div class="card shadow-sm border-0 p-4">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-person-badge me-2"></i>Daftar Guru Pembimbing & Lokasi Bimbingan</h5>
+                    <div class="w-50">
+                      <input type="text" id="searchPlottingCardP" class="form-control" placeholder="Cari Guru, Tempat PKL, atau Siswa..." onkeyup="filterPlottingCards()">
+                    </div>
+                  </div>
+                  <div id="containerPlottingCards" class="row g-4">
+                    <div class="col-12 text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Memuat data penugasan pembimbing...</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CETAK SURAT PERMOHONAN, BALASAN & AMPLOP -->
+              <div class="tab-pane fade" id="tab-p-surat">
+                <div class="card shadow-sm border-0 p-4">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-printer me-2"></i>Cetak Surat Permohonan, Balasan, & Amplop PKL</h5>
+                    <div class="w-50">
+                      <input type="text" id="searchCetakSuratCard" class="form-control" placeholder="Cari berdasarkan Nama Tempat PKL atau Nama Siswa..." onkeyup="filterCetakSuratCards()">
+                    </div>
+                  </div>
+                  
+                  <div id="containerSuratCards" class="row g-4">
+                    <div class="col-12 text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Memuat pengelompokan surat...</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="areaFormLaporanMasalah"></div>
+          `;
+
+          let fTmpP = document.getElementById("formTempatPanitia");
+          if (fTmpP) fTmpP.addEventListener("submit", handleSimpanTempatPanitia);
+
+          let fPlotP = document.getElementById("formPlottingPanitia");
+          if (fPlotP) fPlotP.addEventListener("submit", handleSimpanPlottingPanitia);
+
+          loadPanitiaData();
+          renderSectionLaporanMasalah(user);
+
+        // === DASHBOARD DUDI ===
+        } else if (user.role === 'DUDI') {
+          title.innerText = "Dashboard DUDI / Industri Mitra";
+          content.innerHTML = `<div id="areaFormLaporanMasalah"></div>`;
+          renderSectionLaporanMasalah(user);
+
+        // === DASHBOARD SISWA ===
+        } else if (user.role === 'Siswa') {
+          title.innerText = "Dashboard Siswa - Jurusan " + (user.jurusan || '');
+          content.innerHTML = `<div class="text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Memuat data PKL Anda...</p></div>`;
+
+          google.script.run.withSuccessHandler(pengajuan => {
+            google.script.run.withSuccessHandler(gelombangList => {
+              let today = new Date().toISOString().split('T')[0];
+              let isMasaPklMulai = false;
+
+              if (gelombangList && gelombangList.length > 0) {
+                let gel = gelombangList[0];
+                if (gel.tgl_mulai_pkl && today >= gel.tgl_mulai_pkl) {
+                  isMasaPklMulai = true;
+                }
+              }
+
+              let isDisetujui = (pengajuan && pengajuan.status_verifikasi === 'Disetujui');
+              let isProfilLengkap = (user.alamatRumah && user.alamatRumah.toString().trim() !== '' &&
+                                     user.noHp && user.noHp.toString().trim() !== '');
+
+              let html = `
+                <!-- BANNER MENCOLOK UTAMA: SURAT PERNYATAAN SISWA (WAJIB) -->
+                <div class="card p-3 p-md-4 mb-4 banner-pernyataan border-0 rounded-3">
+                  <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div>
+                      <div class="d-flex align-items-center mb-1">
+                        <span class="badge bg-danger fs-8 me-2 px-2 py-1">WAJIB DILAKUKAN</span>
+                        <h5 class="fw-bold text-dark mb-0"><i class="bi bi-file-earmark-text-fill text-danger me-2"></i>Cetak & Tanda Tangan Surat Pernyataan</h5>
+                      </div>
+                      <p class="text-secondary fs-7 mb-0">Setiap siswa wajib mengunduh, mencetak, menyetujui, dan menandatangani <strong>Surat Pernyataan Orang Tua / Siswa</strong> sebagai syarat utama mengikuti kegiatan PKL.</p>
+                    </div>
+                    <div class="text-md-end col-nowrap">
+                      <button class="btn btn-danger btn-lg fw-bold shadow px-4" onclick="unduhSuratPernyataanSiswa()">
+                        <i class="bi bi-printer-fill me-2"></i>Cetak Surat Pernyataan (PDF)
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-4 mb-4">
+                  <div class="col-md-${(isDisetujui && isMasaPklMulai) ? '6' : '12'}">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-primary text-white fw-bold">
+                        <i class="bi bi-send me-2"></i>Pengajuan Tempat PKL (${user.jurusan})
+                      </div>
+                      <div class="card-body">
+                        ${pengajuan ? `
+                          <div class="alert alert-${pengajuan.status_verifikasi === 'Disetujui' ? 'success' : (pengajuan.status_verifikasi === 'Ditolak' ? 'danger' : 'warning')} mb-3">
+                            <h6 class="fw-bold mb-1">Status Pengajuan: ${pengajuan.status_verifikasi}</h6>
+                            <p class="mb-0 fs-7">Tempat PKL: <strong>${pengajuan.tempat_pkl || pengajuan.tempat_id}</strong></p>
+                          </div>
+                          <div id="areaCetakSurat" class="mt-2"></div>
+                        ` : `
+                          <form id="formPengajuanSiswa">
+                            <div class="mb-2">
+                              <label class="form-label fw-semibold">Pilih Tempat PKL Mitra (Sesuai Kuota ${user.jurusan})</label>
+                              <select class="form-select" id="selectTempat" ${!isProfilLengkap ? 'disabled' : ''} required>
+                                <option value="">-- Memuat Tempat PKL --</option>
+                              </select>
+                            </div>
+
+                            <div class="mb-3">
+                              <button type="button" id="btnCekKuota" class="btn btn-outline-info btn-sm fw-bold w-100" ${!isProfilLengkap ? 'disabled' : ''}>
+                                <i class="bi bi-info-circle me-1"></i> Tampilkan / Cek Detail Kuota Tempat
+                              </button>
+                            </div>
+
+                            <div id="detailTempatArea" class="mb-3 d-none">
+                              <div class="p-3 bg-light border rounded shadow-sm">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                  <span class="fw-bold text-dark fs-6" id="txtNamaInstansi"></span>
+                                  <span class="badge bg-primary fs-7" id="txtStatusKuota"></span>
+                                </div>
+                                <h6 class="fw-bold fs-7 text-muted mb-2"><i class="bi bi-people me-1"></i> Siswa terdaftar di lokasi ini:</h6>
+                                <ul class="list-group list-group-flush border-top border-bottom mb-2 fs-7" id="listPendaftarSiswa">
+                                  <li class="list-group-item bg-transparent text-muted">Belum ada pendaftar.</li>
+                                </ul>
+                                <div id="alertKuotaPenuh" class="alert alert-danger py-2 fs-7 mb-0 d-none">
+                                  <i class="bi bi-exclamation-triangle-fill me-1"></i> Kuota untuk jurusan ${user.jurusan} di tempat ini sudah terpenuhi.
+                                </div>
+                              </div>
+                            </div>
+
+                            <button type="submit" id="btnKirimPengajuan" class="btn btn-primary w-100 fw-bold" ${!isProfilLengkap ? 'disabled' : ''}>
+                              ${isProfilLengkap ? 'Kirim Pengajuan Tempat' : 'Lengkapi Profil Sebelum Mengajukan'}
+                            </button>
+                          </form>
+                        `}
+                      </div>
+                    </div>
+                  </div>`;
+
+              if (isDisetujui && isMasaPklMulai) {
+                html += `
+                  <div class="col-md-6">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-success text-white fw-bold"><i class="bi bi-journal-plus me-2"></i>Isi Jurnal Harian</div>
+                      <div class="card-body">
+                        <form id="formJurnalSiswa">
+                          <div class="mb-2"><label class="form-label fw-semibold">Tanggal Kegiatan</label><input type="date" class="form-control" id="jurnalTanggal" required></div>
+                          <div class="mb-2"><label class="form-label fw-semibold">Ringkasan Aktivitas</label><textarea class="form-control" id="jurnalKegiatan" rows="2" placeholder="Tulis aktivitas pekerjaan hari ini..." required></textarea></div>
+                          <div class="mb-3">
+                            <label class="form-label fw-semibold">Status Kehadiran</label>
+                            <select class="form-select" id="jurnalKehadiran">
+                              <option value="Hadir">Hadir</option>
+                              <option value="Izin">Izin</option>
+                              <option value="Sakit">Sakit</option>
+                            </select>
+                          </div>
+                          <button type="submit" class="btn btn-success w-100 fw-bold">Simpan Jurnal Harian</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>`;
+              }
+
+              html += `</div>`;
+
+              if (isDisetujui && isMasaPklMulai) {
+                html += `
+                  <div class="card shadow-sm border-0">
+                    <div class="card-header bg-dark text-white fw-bold"><i class="bi bi-clock-history me-2"></i>Riwayat Jurnal Harian Anda</div>
+                    <div class="card-body p-0">
+                      <div class="table-responsive">
+                        <table class="table table-striped mb-0">
+                          <thead><tr><th>Tanggal</th><th>Aktivitas Kegiatan</th><th>Kehadiran</th><th>Status Validasi</th><th>Catatan Guru</th></tr></thead>
+                          <tbody id="bodyJurnalSiswa"><tr><td colspan="5" class="text-center py-3">Memuat data jurnal...</td></tr></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>`;
+              } else if (!isMasaPklMulai) {
+                html += `
+                  <div class="alert alert-info shadow-sm">
+                    <i class="bi bi-info-circle-fill me-2"></i> Fitur <strong>Jurnal Harian PKL</strong> akan otomatis terbuka saat tanggal pelaksanaan PKL telah dimulai.
+                  </div>`;
+              }
+
+              content.innerHTML = html;
+
+              if (!pengajuan) {
+                let formPengajuan = document.getElementById("formPengajuanSiswa");
+                let btnCekKuota = document.getElementById("btnCekKuota");
+
+                if (formPengajuan) formPengajuan.addEventListener("submit", handlePengajuan);
+                if (btnCekKuota) btnCekKuota.addEventListener("click", tampilkanDetailKuotaTempat);
+
+                if (isProfilLengkap) {
+                  google.script.run.withSuccessHandler(options => {
+                    let selectTempat = document.getElementById("selectTempat");
+                    if (selectTempat) {
+                      if (options.length === 0) {
+                        selectTempat.innerHTML = `<option value="">Tidak ada kuota tersedia untuk jurusan ${user.jurusan}</option>`;
+                      } else {
+                        selectTempat.innerHTML = options.map(t => `<option value="${t.tempat_id}">${t.nama_instansi} - ${t.alamat}</option>`).join('');
+                      }
+                    }
+                  }).getTempatPKLList(user.jurusan);
+                }
+
+              } else {
+                google.script.run.withSuccessHandler(detail => {
+                  let areaCetak = document.getElementById("areaCetakSurat");
+                  if (areaCetak && detail) {
+                    let isKuotaTerpenuhi = (detail.sisaKuota <= 0);
+
+                    if (isKuotaTerpenuhi) {
+                      areaCetak.innerHTML = `
+                        <div class="p-3 bg-light border border-success rounded">
+                          <h6 class="fw-bold text-success mb-1"><i class="bi bi-check-circle-fill me-1"></i> Kuota Tempat Terpenuhi</h6>
+                          <p class="fs-7 text-muted mb-2">Seluruh kuota di tempat ini (${detail.terisi}/${detail.kuotaMaksimal} siswa) telah lengkap. Silakan unduh Surat Permohonan PKL resmi dengan Kop Sekolah.</p>
+                          <button id="btnUnduhSurat" class="btn btn-success btn-sm fw-bold px-3">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Unduh / Cetak Surat Permohonan PKL
+                          </button>
+                        </div>
+                      `;
+                      document.getElementById("btnUnduhSurat").addEventListener("click", function() {
+                        unduhSuratPermohonan(pengajuan.tempat_pkl || pengajuan.tempat_id);
+                      });
+                    } else {
+                      areaCetak.innerHTML = `
+                        <div class="p-3 bg-light border border-warning rounded">
+                          <h6 class="fw-bold text-warning mb-1"><i class="bi bi-hourglass-split me-1"></i> Menunggu Kuota Terpenuhi</h6>
+                          <p class="fs-7 text-muted mb-0">Surat Permohonan PKL dapat diunduh setelah kuota kelompok di lokasi ini terpenuhi (${detail.terisi}/${detail.kuotaMaksimal} siswa terdaftar).</p>
+                        </div>
+                      `;
+                    }
+                  }
+                }).getDetailTempatSiswa(pengajuan.tempat_pkl || pengajuan.tempat_id, user.jurusan);
+              }
+
+              if (isDisetujui && isMasaPklMulai) {
+                let formJurnal = document.getElementById("formJurnalSiswa");
+                if (formJurnal) formJurnal.addEventListener("submit", handleSimpanJurnal);
+                loadJurnalSiswa();
+              }
+
+            }).getGelombangList();
+          }).getStatusPengajuanSiswa(user.nama);
+
+        // === DASHBOARD GURU PEMBIMBING ===
+        } else if (user.role === 'Guru') {
+          title.innerText = "Dashboard Guru Pembimbing - " + user.nama;
+          content.innerHTML = `
+            <ul class="nav nav-pills mb-4" id="guruTab" role="tablist">
+              <li class="nav-item">
+                <button class="nav-link active fw-bold" data-bs-toggle="tab" data-bs-target="#tab-g-bimbingan">
+                  <i class="bi bi-people-fill me-1"></i> Data Siswa Bimbingan
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tab-g-jurnal">
+                  <i class="bi bi-journal-check me-1"></i> Monitoring & Validasi Jurnal
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content mb-4">
+              <div class="tab-pane fade show active" id="tab-g-bimbingan">
+                <div class="card shadow-sm border-0 p-4">
+                  <h5 class="fw-bold mb-3"><i class="bi bi-person-badge-fill me-2"></i>Daftar Lokasi & Siswa Bimbingan Anda</h5>
+                  <div id="containerSiswaBimbinganCards" class="row g-4">
+                    <div class="col-12 text-center py-4">
+                      <div class="spinner-border text-primary"></div>
+                      <p class="mt-2 text-muted">Memuat data siswa bimbingan...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane fade" id="tab-g-jurnal">
+                <div class="card shadow-sm border-0">
+                  <div class="card-header bg-primary text-white fw-bold">
+                    <i class="bi bi-card-checklist me-2"></i>Monitoring & Validasi Jurnal Siswa Bimbingan
+                  </div>
+                  <div class="card-body p-0">
+                    <div class="table-responsive">
+                      <table class="table table-hover align-middle mb-0">
+                        <thead>
+                          <tr>
+                            <th>Nama Siswa</th>
+                            <th>Kelas</th>
+                            <th>Tempat PKL</th>
+                            <th>Tanggal</th>
+                            <th>Aktivitas Kegiatan</th>
+                            <th>Kehadiran</th>
+                            <th>Status</th>
+                            <th>Aksi Evaluasi</th>
+                          </tr>
+                        </thead>
+                        <tbody id="bodyJurnalGuru">
+                          <tr><td colspan="8" class="text-center py-3">Memuat jurnal siswa bimbingan...</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="areaFormLaporanMasalah"></div>
+          `;
+
+          loadCardsSiswaBimbinganGuru();
+          loadJurnalGuru();
+          renderSectionLaporanMasalah(user);
+
+        // === DASHBOARD ADMIN / KAPROG ===
+        } else if (user.role === 'Kaprog' || user.role === 'Admin' || user.role === 'Super Admin') {
+          let isAdmin = (user.role === 'Admin' || user.role === 'Super Admin');
+          let isKaprog = (user.role === 'Kaprog');
+
+          title.innerText = isKaprog ? `Dashboard Kaprog - Jurusan ${user.jurusan}` : "Dashboard Administrator";
+          
+          content.innerHTML = `
+            <ul class="nav nav-pills mb-4" id="adminTab" role="tablist">
+              ${isAdmin ? `<li class="nav-item"><button class="nav-link active fw-bold" data-bs-toggle="tab" data-bs-target="#tab-gelombang"><i class="bi bi-calendar3 me-1"></i> Gelombang PKL</button></li>` : ''}
+              <li class="nav-item"><button class="nav-link ${isKaprog ? 'active' : ''} fw-bold" data-bs-toggle="tab" data-bs-target="#tab-tempat"><i class="bi bi-buildings me-1"></i> Tempat PKL (DUDI)</button></li>
+              <li class="nav-item"><button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tab-verifikasi"><i class="bi bi-patch-check me-1"></i> Verifikasi Pengajuan (${isKaprog ? user.jurusan : 'Semua'})</button></li>
+              <li class="nav-item"><button class="nav-link fw-bold" data-bs-toggle="tab" data-bs-target="#tab-plotting"><i class="bi bi-person-gear me-1"></i> ${isAdmin ? 'Plotting Pembimbing' : 'Data Pembimbing PKL'}</button></li>
+            </ul>
+
+            <div class="tab-content mb-4">
+              ${isAdmin ? `
+              <div class="tab-pane fade show active" id="tab-gelombang">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-primary text-white fw-bold">Tambah Gelombang Baru</div>
+                      <div class="card-body">
+                        <form id="formGelombangAdmin">
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Nama Gelombang</label><input type="text" id="glbNama" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Tgl Buka Daftar</label><input type="date" id="glbBuka" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Tgl Tutup Daftar</label><input type="date" id="glbTutup" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Tgl Mulai PKL</label><input type="date" id="glbMulai" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Tgl Selesai PKL</label><input type="date" id="glbSelesai" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Target Jurusan</label><input type="text" id="glbJurusan" class="form-control" required></div>
+                          <div class="mb-3"><label class="form-label fs-7 fw-semibold">Target Tingkat</label><input type="text" id="glbTingkat" class="form-control" value="XI" required></div>
+                          <button type="submit" class="btn btn-primary w-100 fw-bold">Simpan Gelombang</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-dark text-white fw-bold">Daftar Gelombang PKL</div>
+                      <div class="card-body p-0">
+                        <table class="table table-striped mb-0">
+                          <thead><tr><th>Nama</th><th>Masa Pendaftaran</th><th>Pelaksanaan</th><th>Jurusan</th></tr></thead>
+                          <tbody id="bodyTabelGelombang"><tr><td colspan="4" class="text-center py-3">Memuat...</td></tr></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>` : ''}
+
+              <!-- TAB TEMPAT PKL -->
+              <div class="tab-pane fade ${isKaprog ? 'show active' : ''}" id="tab-tempat">
+                <div class="row g-4">
+                  <div class="col-md-4">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-success text-white fw-bold">Tambah Tempat PKL & Kuota</div>
+                      <div class="card-body">
+                        <form id="formTempatAdmin">
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Nama Perusahaan / Instansi</label><input type="text" id="tmpNama" class="form-control" required></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Alamat Lengkap</label><textarea id="tmpAlamat" class="form-control" rows="2" required></textarea></div>
+                          <div class="mb-2"><label class="form-label fs-7 fw-semibold">Kontak Person / No HP</label><input type="text" id="tmpKontak" class="form-control" placeholder="08xxxxxxxxxx" required></div>
+                          
+                          <label class="form-label fs-7 fw-semibold text-primary mt-2">Alokasi Kuota per Jurusan:</label>
+                          <div class="row g-2 mb-3">
+                            <div class="col-4"><label class="fs-7">RPL</label><input type="number" id="tmpRPL" class="form-control form-control-sm" value="0" ${isKaprog && user.jurusan !== 'RPL' ? 'disabled' : ''}></div>
+                            <div class="col-4"><label class="fs-7">TKJ</label><input type="number" id="tmpTKJ" class="form-control form-control-sm" value="0" ${isKaprog && user.jurusan !== 'TKJ' ? 'disabled' : ''}></div>
+                            <div class="col-4"><label class="fs-7">AKL</label><input type="number" id="tmpAKL" class="form-control form-control-sm" value="0" ${isKaprog && user.jurusan !== 'AKL' ? 'disabled' : ''}></div>
+                            <div class="col-4"><label class="fs-7">TLAS</label><input type="number" id="tmpTLAS" class="form-control form-control-sm" value="0" ${isKaprog && (user.jurusan !== 'TLAS' && user.jurusan !== 'T.LAS') ? 'disabled' : ''}></div>
+                            <div class="col-4"><label class="fs-7">TSM</label><input type="number" id="tmpTSM" class="form-control form-control-sm" value="0" ${isKaprog && user.jurusan !== 'TSM' ? 'disabled' : ''}></div>
+                            <div class="col-4"><label class="fs-7">DKV</label><input type="number" id="tmpDKV" class="form-control form-control-sm" value="0" ${isKaprog && user.jurusan !== 'DKV' ? 'disabled' : ''}></div>
+                          </div>
+
+                          <button type="submit" class="btn btn-success w-100 fw-bold">Simpan Data DUDI</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card shadow-sm border-0">
+                      <div class="card-header bg-dark text-white fw-bold">Data Tempat PKL (${isKaprog ? 'Jurusan ' + user.jurusan : 'Semua Jurusan'})</div>
+                      <div class="card-body p-0">
+                        <div class="table-responsive">
+                          <table class="table table-striped align-middle mb-0">
+                            <thead><tr><th>Instansi</th><th>Alamat & Kontak</th><th>Rincian Kuota</th><th>Aksi</th></tr></thead>
+                            <tbody id="bodyTabelTempat"><tr><td colspan="4" class="text-center py-3">Memuat...</td></tr></tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB VERIFIKASI -->
+              <div class="tab-pane fade" id="tab-verifikasi">
+                <div class="card shadow-sm border-0 p-4">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-patch-check me-2"></i>Verifikasi Pengajuan Tempat PKL Siswa (${isKaprog ? user.jurusan : 'Semua'})</h5>
+                    <div class="w-50">
+                      <input type="text" id="searchVerifikasiCard" class="form-control" placeholder="Cari Tempat PKL atau Nama Siswa..." onkeyup="filterVerifikasiCards()">
+                    </div>
+                  </div>
+                  
+                  <div id="containerVerifikasiCards" class="row g-4">
+                    <div class="col-12 text-center py-4"><div class="spinner-border text-warning"></div><p class="mt-2 text-muted">Memuat pengajuan siswa...</p></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB PLOTTING / VIEW PEMBIMBING -->
+              <div class="tab-pane fade" id="tab-plotting">
+                ${isAdmin ? `
+                  <div class="card shadow-sm border-0 p-4 mb-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-person-plus me-2"></i>Penugasan Guru Pembimbing ke Lokasi PKL</h5>
+                    <form id="formPlottingAdmin" class="row g-3">
+                      <div class="col-md-6"><label class="form-label fw-semibold">Pilih Guru Pembimbing</label><select class="form-select" id="plotGuru" required><option value="">Memuat Guru...</option></select></div>
+                      <div class="col-md-6"><label class="form-label fw-semibold">Pilih Tempat PKL (DUDI)</label><select class="form-select" id="plotTempat" required><option value="">Memuat Tempat...</option></select></div>
+                      <div class="col-12 mt-4"><button type="submit" class="btn btn-primary fw-bold px-4"><i class="bi bi-check-circle me-1"></i> Tetapkan Guru Pembimbing</button></div>
+                    </form>
+                  </div>
+                ` : ''}
+
+                <div class="card shadow-sm border-0 p-4">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="fw-bold mb-0"><i class="bi bi-person-badge me-2"></i>Daftar Guru Pembimbing & Lokasi Bimbingan</h5>
+                    <div class="w-50">
+                      <input type="text" id="searchPlottingCard" class="form-control" placeholder="Cari Guru, Tempat PKL, atau Siswa..." onkeyup="filterPlottingCards()">
+                    </div>
+                  </div>
+                  <div id="containerPlottingCards" class="row g-4">
+                    <div class="col-12 text-center py-4"><div class="spinner-border text-primary"></div><p class="mt-2 text-muted">Memuat data penugasan pembimbing...</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="areaFormLaporanMasalah"></div>
+          `;
+
+          if (isAdmin) {
+            let fGel = document.getElementById("formGelombangAdmin");
+            let fPlot = document.getElementById("formPlottingAdmin");
+            if (fGel) fGel.addEventListener("submit", handleSimpanGelombang);
+            if (fPlot) fPlot.addEventListener("submit", handleSimpanPlotting);
+          }
+
+          let fTmp = document.getElementById("formTempatAdmin");
+          if (fTmp) fTmp.addEventListener("submit", handleSimpanTempat);
+
+          loadAdminData();
+          renderSectionLaporanMasalah(user);
+        }
+      }
+
+      function loadCardsSiswaBimbinganGuru() {
+        google.script.run.withSuccessHandler(groupedList => {
+          let container = document.getElementById("containerSiswaBimbinganCards");
+          if (!container) return;
+
+          if (!groupedList || groupedList.length === 0) {
+            container.innerHTML = `<div class="col-12 text-center text-muted py-4">Anda belum memiliki lokasi penugasan bimbingan.</div>`;
+            return;
+          }
+
+          container.innerHTML = groupedList.map(group => `
+            <div class="col-md-6">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-dark text-white fw-bold d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-building me-2"></i>${group.namaTempat}</span>
+                  <span class="badge bg-info text-dark fs-8">${group.siswaList.length} Siswa</span>
+                </div>
+                <div class="card-body">
+                  <p class="fs-7 text-muted mb-1"><i class="bi bi-geo-alt me-1"></i>${group.alamatTempat}</p>
+                  <p class="fs-7 text-muted mb-3"><i class="bi bi-telephone me-1"></i>Kontak DUDI: ${group.kontakTempat}</p>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-sm table-bordered align-middle fs-7 mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Nama Siswa</th>
+                          <th class="col-nowrap">Kelas</th>
+                          <th class="col-nowrap">No HP</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${group.siswaList.length === 0 ? `
+                          <tr><td colspan="3" class="text-center text-muted py-2"><em>Belum ada siswa disetujui di lokasi ini</em></td></tr>
+                        ` : group.siswaList.map(s => `
+                          <tr>
+                            <td><strong>${s.nama}</strong><br><small class="text-muted">${s.jurusan}</small></td>
+                            <td class="col-nowrap text-center">${s.kelas}</td>
+                            <td class="col-nowrap text-center">${s.noHp}</td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }).getSiswaBimbinganGuru(userProfile.nama);
+      }
+
+      function loadWakaData() {
+        google.script.run
+          .withSuccessHandler(groupedList => {
+            let container = document.getElementById("containerWakaCards");
+            if (!container) return;
+
+            if (!groupedList || groupedList.length === 0) {
+              container.innerHTML = `<div class="col-12 text-center text-muted py-4">Data tempat PKL tidak ditemukan.</div>`;
+              return;
+            }
+
+            container.innerHTML = groupedList.map(group => `
+              <div class="col-md-6 card-waka-item">
+                <div class="card shadow-sm border-0 h-100">
+                  <div class="card-header bg-primary text-white fw-bold d-flex justify-content-between align-items-center">
+                    <span><i class="bi bi-building me-2"></i>${group.namaTempat}</span>
+                    <span class="badge bg-light text-primary fs-8">${group.siswaList.length} / ${group.kuotaMaksimal || 0} Siswa</span>
+                  </div>
+                  <div class="card-body">
+                    <p class="fs-7 text-muted mb-1"><i class="bi bi-geo-alt me-1"></i>${group.alamatTempat}</p>
+                    <p class="fs-7 fw-semibold mb-3">
+                      <i class="bi bi-person-badge me-1"></i>Pembimbing: 
+                      <span class="badge ${group.pembimbing === 'Guru Pembimbing belum ditambahkan' ? 'bg-warning text-dark' : 'bg-info text-dark'} fs-8">
+                        ${group.pembimbing}
+                      </span>
+                    </p>
+                    
+                    <div class="table-responsive">
+                      <table class="table table-sm table-bordered align-middle fs-7 mb-0">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Nama Siswa</th>
+                            <th class="col-nowrap">Kelas</th>
+                            <th class="col-nowrap">No HP</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ${group.siswaList.length === 0 ? `
+                            <tr>
+                              <td colspan="4" class="text-center text-muted py-2">
+                                <em>Belum ada siswa yang mendaftar</em>
+                              </td>
+                            </tr>
+                          ` : group.siswaList.map(s => `
+                            <tr>
+                              <td><strong>${s.namaSiswa}</strong></td>
+                              <td class="col-nowrap text-center">${s.kelasSiswa}</td>
+                              <td class="col-nowrap text-center">${s.noHp}</td>
+                              <td class="text-center"><span class="badge bg-${s.status === 'Disetujui' ? 'success' : 'warning'} fs-8">${s.status}</span></td>
+                            </tr>
+                          `).join('')}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `).join('');
+          })
+          .withFailureHandler(err => {
+            let container = document.getElementById("containerWakaCards");
+            if (container) {
+              container.innerHTML = `<div class="col-12 text-center text-danger py-4">Gagal memuat data: ${err.message}</div>`;
+            }
+          })
+          .getGroupedPengajuanForSurat(null);
+      }
+
+      function filterWakaCards() {
+        let input = document.getElementById("searchWakaCard").value.toLowerCase();
+        let cards = document.querySelectorAll("#containerWakaCards .card-waka-item");
+        cards.forEach(card => {
+          let text = card.innerText.toLowerCase();
+          card.style.display = text.includes(input) ? "" : "none";
+        });
+      }
+
+      function openEditTempatModal(tempatId) {
+        let t = cachedTempatList.find(item => item.tempat_id.toString().trim() === tempatId.toString().trim());
+        if (!t) return;
+
+        document.getElementById("editTmpId").value = t.tempat_id;
+        document.getElementById("editTmpNama").value = t.nama_instansi || '';
+        document.getElementById("editTmpAlamat").value = t.alamat || '';
+        document.getElementById("editTmpKontak").value = t.kontak_person || t.kontak || '';
+
+        let inputRPL = document.getElementById("editTmpRPL");
+        let inputTKJ = document.getElementById("editTmpTKJ");
+        let inputAKL = document.getElementById("editTmpAKL");
+        let inputTLAS = document.getElementById("editTmpTLAS");
+        let inputTSM = document.getElementById("editTmpTSM");
+        let inputDKV = document.getElementById("editTmpDKV");
+
+        inputRPL.value = t.kuota_rpl || 0;
+        inputTKJ.value = t.kuota_tkj || 0;
+        inputAKL.value = t.kuota_akl || 0;
+        inputTLAS.value = t.kuota_tlas || 0;
+        inputTSM.value = t.kuota_tsm || 0;
+        inputDKV.value = t.kuota_dkv || 0;
+
+        let isKaprog = (userProfile && userProfile.role === 'Kaprog');
+        let jurusanUser = isKaprog ? userProfile.jurusan.toString().toUpperCase().trim() : null;
+
+        inputRPL.disabled = isKaprog && (jurusanUser !== 'RPL');
+        inputTKJ.disabled = isKaprog && (jurusanUser !== 'TKJ');
+        inputAKL.disabled = isKaprog && (jurusanUser !== 'AKL');
+        inputTLAS.disabled = isKaprog && (jurusanUser !== 'TLAS' && jurusanUser !== 'T.LAS');
+        inputTSM.disabled = isKaprog && (jurusanUser !== 'TSM');
+        inputDKV.disabled = isKaprog && (jurusanUser !== 'DKV');
+
+        editTempatModalObj.show();
+      }
+
+      function handleFormUpdateTempat(e) {
+        e.preventDefault();
+        let btn = document.getElementById("btnUpdateTempatSubmit");
+        btn.disabled = true;
+        btn.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Menyimpan...`;
+
+        let data = {
+          tempatId: document.getElementById("editTmpId").value,
+          namaInstansi: document.getElementById("editTmpNama").value,
+          alamat: document.getElementById("editTmpAlamat").value,
+          kontak: document.getElementById("editTmpKontak").value,
+          kuotaRPL: document.getElementById("editTmpRPL").value,
+          kuotaTKJ: document.getElementById("editTmpTKJ").value,
+          kuotaAKL: document.getElementById("editTmpAKL").value,
+          kuotaTLAS: document.getElementById("editTmpTLAS").value,
+          kuotaTSM: document.getElementById("editTmpTSM").value,
+          kuotaDKV: document.getElementById("editTmpDKV").value
+        };
+
+        google.script.run.withSuccessHandler(res => {
+          btn.disabled = false;
+          btn.innerHTML = `<i class="bi bi-check-circle me-1"></i> Simpan Perubahan Tempat`;
+          alert(res.message);
+          if (res.status === 'Success') {
+            editTempatModalObj.hide();
+            if (userProfile.role === 'Panitia PKL') {
+              loadPanitiaData();
+            } else {
+              loadAdminData();
+            }
+          }
+        }).updateTempatPKL(data);
+      }
+
+      function hapusTempatPKLAction(tempatId, namaInstansi) {
+        if (confirm(`Apakah Anda yakin ingin menghapus tempat PKL "${namaInstansi}"?`)) {
+          google.script.run.withSuccessHandler(res => {
+            alert(res.message);
+            if (userProfile.role === 'Panitia PKL') {
+              loadPanitiaData();
+            } else {
+              loadAdminData();
+            }
+          }).hapusTempatPKL(tempatId);
+        }
+      }
+
+      function loadPenugasanCards() {
+        let isKaprog = (userProfile && userProfile.role === 'Kaprog');
+        let jurusanFilter = isKaprog ? userProfile.jurusan : null;
+
+        google.script.run.withSuccessHandler(groupedList => {
+          let container = document.getElementById("containerPlottingCards");
+          if (!container) return;
+
+          if (!groupedList || groupedList.length === 0) {
+            container.innerHTML = `<div class="col-12 text-center text-muted py-4">Belum ada penugasan guru pembimbing yang ditetapkan.</div>`;
+            return;
+          }
+
+          let isAdminOrPanitia = (userProfile.role === 'Admin' || userProfile.role === 'Super Admin' || userProfile.role === 'Panitia PKL');
+
+          container.innerHTML = groupedList.map(group => `
+            <div class="col-md-6 card-plotting-item">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-dark text-white fw-bold d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-person-fill-check me-2"></i>${group.namaGuru}</span>
+                  ${isAdminOrPanitia ? `
+                    <button class="btn btn-sm btn-outline-danger py-0 px-2 fs-8 text-white" onclick="hapusPenugasanAction('${group.penugasanId}', '${group.namaGuru}', '${group.namaTempat}')">
+                      <i class="bi bi-trash me-1"></i> Batal Penugasan
+                    </button>
+                  ` : ''}
+                </div>
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary mb-1"><i class="bi bi-building me-1"></i>${group.namaTempat}</h6>
+                  <p class="fs-7 text-muted mb-3"><i class="bi bi-geo-alt me-1"></i>${group.alamatTempat}</p>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-sm table-bordered align-middle fs-7 mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Siswa Bimbingan</th>
+                          <th class="col-nowrap">Kelas</th>
+                          <th class="col-nowrap">No HP</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${group.siswaList.length === 0 ? `
+                          <tr><td colspan="3" class="text-center text-muted py-2"><em>Belum ada siswa disetujui di lokasi ini</em></td></tr>
+                        ` : group.siswaList.map(s => `
+                          <tr>
+                            <td><strong>${s.nama}</strong></td>
+                            <td class="col-nowrap text-center">${s.kelas}</td>
+                            <td class="col-nowrap text-center">${s.noHp}</td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }).getPenugasanGroupedList(jurusanFilter);
+      }
+
+      function filterPlottingCards() {
+        let inputVal = document.getElementById("searchPlottingCard") ? document.getElementById("searchPlottingCard").value : (document.getElementById("searchPlottingCardP") ? document.getElementById("searchPlottingCardP").value : "");
+        let input = inputVal.toLowerCase();
+        let cards = document.querySelectorAll("#containerPlottingCards .card-plotting-item");
+        cards.forEach(card => {
+          let text = card.innerText.toLowerCase();
+          card.style.display = text.includes(input) ? "" : "none";
+        });
+      }
+
+      function hapusPenugasanAction(penugasanId, namaGuru, namaTempat) {
+        if (confirm(`Apakah Anda yakin ingin membatalkan penugasan "${namaGuru}" di "${namaTempat}"?`)) {
+          google.script.run.withSuccessHandler(res => {
+            alert(res.message);
+            if (userProfile.role === 'Panitia PKL') {
+              loadPanitiaData();
+            } else {
+              loadAdminData();
+            }
+          }).hapusPenugasanGuru(penugasanId);
+        }
+      }
+
+      // === FITUR PANITIA PKL (SURAT PERMOHONAN, BALASAN, & AMPLOP) ===
+      function loadPanitiaData() {
+        google.script.run.withSuccessHandler(list => {
+          let el = document.getElementById("bodyTabelVerifikasiPanitia");
+          if (el) {
+            if (list.length === 0) {
+              el.innerHTML = `<tr><td colspan="6" class="text-center text-muted py-3">Tidak ada pengajuan.</td></tr>`;
+              return;
+            }
+            el.innerHTML = list.map(p => `
+              <tr>
+                <td><strong>${p.namaSiswa}</strong></td>
+                <td>${p.kelasSiswa}</td>
+                <td>${p.namaTempat}</td>
+                <td>${p.alamatTempat}</td>
+                <td><span class="badge bg-${p.status === 'Disetujui' ? 'success' : (p.status === 'Ditolak' ? 'danger' : 'warning')}">${p.status}</span></td>
+                <td>
+                  <button class="btn btn-sm btn-success mb-1" onclick="prosesVerifikasi('${p.pengajuanId}', 'Disetujui')">Setujui</button>
+                  <button class="btn btn-sm btn-danger mb-1" onclick="prosesVerifikasi('${p.pengajuanId}', 'Ditolak')">Tolak</button>
+                </td>
+              </tr>
+            `).join('');
+          }
+        }).getPengajuanListRich(null);
+
+        google.script.run.withSuccessHandler(list => {
+          cachedTempatList = list || [];
+          let el = document.getElementById("bodyTabelTempatPanitia");
+          if (el) {
+            if (list.length === 0) {
+              el.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-3">Tidak ada data tempat PKL.</td></tr>`;
+              return;
+            }
+            el.innerHTML = list.map(t => `
+              <tr>
+                <td><strong>${t.nama_instansi || ''}</strong></td>
+                <td>${t.alamat || '-'}<br><small class="text-muted"><i class="bi bi-telephone me-1"></i>${t.kontak_person || t.kontak || '-'}</small></td>
+                <td>
+                  <span class="badge bg-warning text-dark badge-kuota">RPL: ${t.kuota_rpl || 0}</span>
+                  <span class="badge bg-primary badge-kuota">TKJ: ${t.kuota_tkj || 0}</span>
+                  <span class="badge bg-pink badge-kuota">AKL: ${t.kuota_akl || 0}</span>
+                  <span class="badge bg-danger badge-kuota">TLAS: ${t.kuota_tlas || 0}</span>
+                  <span class="badge bg-dark badge-kuota">TSM: ${t.kuota_tsm || 0}</span>
+                  <span class="badge bg-purple badge-kuota">DKV: ${t.kuota_dkv || 0}</span>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-warning mb-1 me-1" onclick="openEditTempatModal('${t.tempat_id}')"><i class="bi bi-pencil-square"></i> Edit</button>
+                  <button class="btn btn-sm btn-danger mb-1" onclick="hapusTempatPKLAction('${t.tempat_id}', '${t.nama_instansi}')"><i class="bi bi-trash"></i> Hapus</button>
+                </td>
+              </tr>
+            `).join('');
+          }
+        }).getTempatPKLList(null);
+
+        google.script.run.withSuccessHandler(gurus => {
+          let el = document.getElementById("plotGuruP");
+          if (el) el.innerHTML = gurus.map(g => `<option value="${g.user_id || g.email}">${g.nama}</option>`).join('');
+        }).getGuruList();
+
+        google.script.run.withSuccessHandler(tmpt => {
+          let el = document.getElementById("plotTempatP");
+          if (el) el.innerHTML = tmpt.map(t => `<option value="${t.tempat_id}">${t.nama_instansi}</option>`).join('');
+        }).getTempatPKLList(null);
+
+        google.script.run.withSuccessHandler(groupedList => {
+          let container = document.getElementById("containerSuratCards");
+          if (!container) return;
+
+          if (!groupedList || groupedList.length === 0) {
+            container.innerHTML = `<div class="col-12 text-center text-muted py-4">Belum ada pengajuan tempat PKL yang siap dicetak.</div>`;
+            return;
+          }
+
+          container.innerHTML = groupedList.map(group => {
+            let targetId = group.tempatId || group.namaTempat;
+            return `
+              <div class="col-md-6 card-surat-item">
+                <div class="card shadow-sm border-0 h-100">
+                  <div class="card-header bg-dark text-white fw-bold d-flex justify-content-between align-items-center">
+                    <span><i class="bi bi-building me-2"></i>${group.namaTempat}</span>
+                    <span class="badge bg-info text-dark fs-8">${group.siswaList.length} / ${group.kuotaMaksimal || 0} Siswa</span>
+                  </div>
+                  <div class="card-body">
+                    <p class="fs-7 text-muted mb-2"><i class="bi bi-geo-alt me-1"></i>${group.alamatTempat}</p>
+                    
+                    <div class="table-responsive mb-3">
+                      <table class="table table-sm table-bordered align-middle fs-7 mb-0">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Nama Siswa</th>
+                            <th class="col-nowrap">Kelas</th>
+                            <th class="col-nowrap">No HP</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          ${group.siswaList.length === 0 ? `
+                            <tr><td colspan="4" class="text-center text-muted py-2"><em>Belum ada siswa yang mendaftar</em></td></tr>
+                          ` : group.siswaList.map(s => `
+                            <tr>
+                              <td><strong>${s.namaSiswa}</strong></td>
+                              <td class="col-nowrap text-center">${s.kelasSiswa}</td>
+                              <td class="col-nowrap text-center">${s.noHp}</td>
+                              <td class="text-center"><span class="badge bg-${s.status === 'Disetujui' ? 'success' : 'warning'} fs-8">${s.status}</span></td>
+                            </tr>
+                          `).join('')}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <!-- ACTION TOMBOL CETAK LENGKAP PADA PANITIA -->
+                    <div class="d-flex gap-2 justify-content-end flex-wrap">
+                      <button class="btn btn-sm btn-outline-secondary fw-bold" onclick="cetakAmplopPanitia('${targetId}', '${group.satuJurusan}')">
+                        <i class="bi bi-envelope-paper me-1"></i> Cetak Amplop
+                      </button>
+                      <button class="btn btn-sm btn-outline-primary fw-bold" onclick="cetakSuratBalasanPanitia('${targetId}', '${group.satuJurusan}')">
+                        <i class="bi bi-file-earmark-text me-1"></i> Surat Balasan
+                      </button>
+                      <button class="btn btn-sm btn-success fw-bold" ${group.siswaList.length === 0 ? 'disabled' : ''} onclick="unduhSuratPermohonanPanitia('${targetId}', '${group.satuJurusan}')">
+                        <i class="bi bi-printer me-1"></i> Cetak Permohonan
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+        }).getGroupedPengajuanForSurat(null);
+
+        loadPenugasanCards();
+      }
+
+      function handleSimpanTempatPanitia(e) {
+        e.preventDefault();
+        let data = {
+          namaInstansi: document.getElementById("tmpNamaP").value,
+          alamat: document.getElementById("tmpAlamatP").value,
+          kontak: document.getElementById("tmpKontakP").value,
+          kuotaRPL: document.getElementById("tmpRPLP").value,
+          kuotaTKJ: document.getElementById("tmpTKJP").value,
+          kuotaAKL: document.getElementById("tmpAKLP").value,
+          kuotaTLAS: document.getElementById("tmpTLASP").value,
+          kuotaTSM: document.getElementById("tmpTSMP").value,
+          kuotaDKV: document.getElementById("tmpDKVP").value
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          loadPanitiaData();
+        }).simpanTempatPKL(data);
+      }
+
+      function handleSimpanPlottingPanitia(e) {
+        e.preventDefault();
+        let data = {
+          guruId: document.getElementById("plotGuruP").value,
+          tempatId: document.getElementById("plotTempatP").value
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          if (res.status === 'Success') loadPanitiaData();
+        }).simpanPenugasanGuru(data);
+      }
+
+      function filterCetakSuratCards() {
+        let input = document.getElementById("searchCetakSuratCard").value.toLowerCase();
+        let cards = document.querySelectorAll("#containerSuratCards .card-surat-item");
+        cards.forEach(card => {
+          let text = card.innerText.toLowerCase();
+          card.style.display = text.includes(input) ? "" : "none";
+        });
+      }
+
+      function filterVerifikasiCards() {
+        let input = document.getElementById("searchVerifikasiCard").value.toLowerCase();
+        let cards = document.querySelectorAll("#containerVerifikasiCards .card-verifikasi-item");
+        cards.forEach(card => {
+          let text = card.innerText.toLowerCase();
+          card.style.display = text.includes(input) ? "" : "none";
+        });
+      }
+
+      function unduhSuratPermohonanPanitia(tempatId, jurusan) {
+        unduhSuratPermohonan(tempatId, jurusan);
+      }
+
+      // === FUNGSI BUKA JENDELA CETAK (AMPLOP, BALASAN, PERNYATAAN) ===
+      function cetakAmplopPanitia(tempatId, jurusan) {
+        if (!tempatId) {
+          alert("ID / Nama Tempat PKL tidak valid.");
+          return;
+        }
+        google.script.run
+          .withSuccessHandler(htmlContent => {
+            if (!htmlContent) {
+              alert("Gagal memuat template Amplop.");
+              return;
+            }
+            let win = window.open('', '_blank');
+            win.document.write(htmlContent);
+            win.document.close();
+          })
+          .withFailureHandler(err => {
+            alert("Terjadi kesalahan saat membuat Amplop: " + err.message);
+          })
+          .generateAmplopSuratHTML(tempatId, jurusan);
+      }
+
+      function cetakSuratBalasanPanitia(tempatId, jurusan) {
+        if (!tempatId) {
+          alert("ID / Nama Tempat PKL tidak valid.");
+          return;
+        }
+        google.script.run
+          .withSuccessHandler(htmlContent => {
+            if (!htmlContent) {
+              alert("Gagal memuat template Surat Balasan.");
+              return;
+            }
+            let win = window.open('', '_blank');
+            win.document.write(htmlContent);
+            win.document.close();
+          })
+          .withFailureHandler(err => {
+            alert("Terjadi kesalahan saat membuat Surat Balasan: " + err.message);
+          })
+          .generateSuratBalasanHTML(tempatId, jurusan);
+      }
+
+      function unduhSuratPernyataanSiswa() {
+        if (!userProfile) {
+          alert("Sesi pengguna tidak valid. Silakan re-login.");
+          return;
+        }
+        google.script.run
+          .withSuccessHandler(htmlContent => {
+            if (!htmlContent) {
+              alert("Gagal memuat dokumen Surat Pernyataan.");
+              return;
+            }
+            let win = window.open('', '_blank');
+            win.document.write(htmlContent);
+            win.document.close();
+          })
+          .withFailureHandler(err => {
+            alert("Gagal mengunduh Surat Pernyataan: " + err.message);
+          })
+          .generateSuratPernyataanSiswaHTML(userProfile);
+      }
+
+      // === FORM LAPORAN SISWA BERMASALAH & PENARIKAN (KAPROG / ADMIN) ===
+      function renderSectionLaporanMasalah(user) {
+        let area = document.getElementById("areaFormLaporanMasalah");
+        if (!area) return;
+
+        let isPelapor = (user.role === 'DUDI' || user.role === 'Guru');
+        let isPenarik = (user.role === 'Kaprog' || user.role === 'Admin' || user.role === 'Super Admin');
+
+        let html = `
+          <div class="row g-4 mt-2">
+            ${isPelapor ? `
+            <div class="col-md-5">
+              <div class="card shadow-sm border-0 border-top border-danger border-4">
+                <div class="card-header bg-danger text-white fw-bold">
+                  <i class="bi bi-exclamation-triangle-fill me-2"></i>Form Laporan Siswa PKL Bermasalah
+                </div>
+                <div class="card-body">
+                  <form id="formInputMasalah">
+                    <div class="mb-3">
+                      <label class="form-label fw-semibold fs-7">Pilih Siswa Bermasalah</label>
+                      <select class="form-select" id="lprNamaSiswa" required>
+                        <option value="">-- Memuat Daftar Siswa --</option>
+                      </select>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label fw-semibold fs-7">Lokasi Tempat PKL</label>
+                      <input type="text" class="form-control" id="lprTempatPkl" placeholder="Nama Perusahaan / Tempat PKL" required readonly>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label fw-semibold fs-7">Deskripsi Masalah / Pelanggaran</label>
+                      <textarea class="form-control" id="lprDeskripsi" rows="3" placeholder="Tuliskan kendala atau masalah siswa secara detail..." required></textarea>
+                    </div>
+                    <button type="submit" id="btnKirimMasalah" class="btn btn-danger w-100 fw-bold">
+                      <i class="bi bi-send-fill me-1"></i> Kirim Laporan Masalah
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            ` : ''}
+
+            <div class="col-md-${isPelapor ? '7' : '12'}">
+              <div class="card shadow-sm border-0">
+                <div class="card-header bg-dark text-white fw-bold">
+                  <i class="bi bi-list-stars me-2"></i>Daftar Laporan Siswa PKL Bermasalah
+                </div>
+                <div class="card-body p-0">
+                  <div class="table-responsive">
+                    <table class="table table-striped align-middle mb-0 fs-7">
+                      <thead>
+                        <tr>
+                          <th>Waktu</th>
+                          <th>Nama Siswa</th>
+                          <th>Tempat PKL</th>
+                          <th>Pelapor</th>
+                          <th>Deskripsi Masalah</th>
+                          ${isPenarik ? '<th class="text-center">Aksi Penarikan</th>' : ''}
+                        </tr>
+                      </thead>
+                      <tbody id="bodyTabelLaporanMasalah">
+                        <tr><td colspan="${isPenarik ? '6' : '5'}" class="text-center py-3">Memuat data laporan...</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        area.innerHTML = html;
+
+        if (isPelapor) {
+          let formLpr = document.getElementById("formInputMasalah");
+          if (formLpr) formLpr.addEventListener("submit", handleSimpanLaporanMasalah);
+
+          google.script.run.withSuccessHandler(list => {
+            let select = document.getElementById("lprNamaSiswa");
+            if (select) {
+              if (list.length === 0) {
+                select.innerHTML = `<option value="">Tidak ada siswa aktif</option>`;
+              } else {
+                select.innerHTML = `<option value="">-- Pilih Siswa --</option>` + list.map(s => `
+                  <option value="${s.namaSiswa}" data-tempat="${s.tempatPkl}">${s.namaSiswa} (${s.tempatPkl})</option>
+                `).join('');
+
+                select.onchange = function() {
+                  let opt = select.options[select.selectedIndex];
+                  let tmpt = opt.getAttribute("data-tempat") || "";
+                  if (tmpt) document.getElementById("lprTempatPkl").value = tmpt;
+                };
+              }
+            }
+          }).getSiswaDudiList(user.role, user.nama);
+        }
+
+        loadDaftarLaporanMasalah(user);
+      }
+
+      function handleSimpanLaporanMasalah(e) {
+        e.preventDefault();
+        let btn = document.getElementById("btnKirimMasalah");
+        btn.disabled = true;
+        btn.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Mengirim...`;
+
+        let data = {
+          pelaporNama: userProfile.nama,
+          pelaporRole: userProfile.role,
+          namaSiswa: document.getElementById("lprNamaSiswa").value,
+          tempatPkl: document.getElementById("lprTempatPkl").value,
+          deskripsiMasalah: document.getElementById("lprDeskripsi").value
+        };
+
+        google.script.run.withSuccessHandler(res => {
+          btn.disabled = false;
+          btn.innerHTML = `<i class="bi bi-send-fill me-1"></i> Kirim Laporan Masalah`;
+          alert(res.message);
+          document.getElementById("formInputMasalah").reset();
+          loadDaftarLaporanMasalah(userProfile);
+        }).simpanLaporanMasalah(data);
+      }
+
+      function loadDaftarLaporanMasalah(user) {
+        let isPenarik = (user.role === 'Kaprog' || user.role === 'Admin' || user.role === 'Super Admin');
+        google.script.run.withSuccessHandler(list => {
+          let tbody = document.getElementById("bodyTabelLaporanMasalah");
+          if (!tbody) return;
+          if (!list || list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="${isPenarik ? '6' : '5'}" class="text-center text-muted py-3">Belum ada catatan laporan masalah siswa.</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = list.map(l => `
+            <tr>
+              <td><small class="text-muted">${l.timestamp || '-'}</small></td>
+              <td><strong class="text-danger">${l.nama_siswa}</strong></td>
+              <td>${l.tempat_pkl}</td>
+              <td>${l.pelapor_nama} <span class="badge bg-secondary fs-8">${l.pelapor_role}</span></td>
+              <td>${l.deskripsi_masalah}</td>
+              ${isPenarik ? `
+                <td class="text-center col-nowrap">
+                  <button class="btn btn-sm btn-warning py-0 px-2 fs-8 mb-1" onclick="prosesPenarikanSiswa('${l.laporan_id}', 'Pindah Tempat')">
+                    Pindah Tempat
+                  </button>
+                  <button class="btn btn-sm btn-danger py-0 px-2 fs-8 mb-1" onclick="prosesPenarikanSiswa('${l.laporan_id}', 'Tidak LULUS')">
+                    Tidak LULUS
+                  </button>
+                </td>
+              ` : ''}
+            </tr>
+          `).join('');
+        }).getLaporanMasalahList(user);
+      }
+
+      function prosesPenarikanSiswa(laporanId, statusPenarikan) {
+        let ket = prompt(`Masukkan alasan / catatan tindakan penarikan (${statusPenarikan}):`, "Dipertimbangkan berdasarkan laporan DUDI / Guru Pembimbing");
+        if (ket !== null) {
+          google.script.run.withSuccessHandler(res => {
+            alert(res.message);
+            renderDashboard(userProfile);
+          }).tarikSiswaPKL(laporanId, statusPenarikan, ket);
+        }
+      }
+
+      function tampilkanDetailKuotaTempat() {
+        let selectTempat = document.getElementById("selectTempat");
+        let tempatId = selectTempat ? selectTempat.value : "";
+        let areaDetail = document.getElementById("detailTempatArea");
+        let btnKirim = document.getElementById("btnKirimPengajuan");
+        let alertPenuh = document.getElementById("alertKuotaPenuh");
+        let btnCek = document.getElementById("btnCekKuota");
+
+        if (!tempatId) {
+          alert("Silakan pilih tempat PKL terlebih dahulu.");
+          return;
+        }
+
+        if (btnCek) {
+          btnCek.disabled = true;
+          btnCek.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Memuat Data...`;
+        }
+
+        google.script.run.withSuccessHandler(detail => {
+          if (btnCek) {
+            btnCek.disabled = false;
+            btnCek.innerHTML = `<i class="bi bi-info-circle me-1"></i> Tampilkan / Cek Detail Kuota Tempat`;
+          }
+
+          if (!detail) {
+            alert("Data tempat PKL tidak ditemukan.");
+            return;
+          }
+
+          if (areaDetail) areaDetail.classList.remove("d-none");
+
+          document.getElementById("txtNamaInstansi").innerText = detail.tempat.nama_instansi;
+          document.getElementById("txtStatusKuota").innerText = `Kuota ${userProfile.jurusan}: ${detail.terisi} / ${detail.kuotaMaksimal} Terisi`;
+
+          let listEl = document.getElementById("listPendaftarSiswa");
+          if (detail.pendaftar.length === 0) {
+            listEl.innerHTML = `<li class="list-group-item bg-transparent text-muted">Belum ada siswa lain yang mendaftar di lokasi ini.</li>`;
+          } else {
+            listEl.innerHTML = detail.pendaftar.map(p => `
+              <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-1">
+                <span><i class="bi bi-person-fill me-1 text-primary"></i> ${p.nama} (${p.kelas})</span>
+                <span class="badge bg-${p.status === 'Disetujui' ? 'success' : 'secondary'} fs-8">${p.status}</span>
+              </li>
+            `).join('');
+          }
+
+          if (detail.sisaKuota <= 0) {
+            if (btnKirim) btnKirim.disabled = true;
+            if (alertPenuh) alertPenuh.classList.remove("d-none");
+          } else {
+            if (btnKirim) btnKirim.disabled = false;
+            if (alertPenuh) alertPenuh.classList.add("d-none");
+          }
+        }).getDetailTempatSiswa(tempatId, userProfile.jurusan);
+      }
+
+      function unduhSuratPermohonan(tempatId, jurusan) {
+        let jur = jurusan || userProfile.jurusan;
+        google.script.run.withSuccessHandler(htmlContent => {
+          let win = window.open('', '_blank');
+          win.document.write(htmlContent);
+          win.document.close();
+        }).generateSuratPermohonanHTML(tempatId, jur);
+      }
+
+      function handleSimpanGelombang(e) {
+        e.preventDefault();
+        let data = {
+          nama: document.getElementById("glbNama").value,
+          tglBuka: document.getElementById("glbBuka").value,
+          tglTutup: document.getElementById("glbTutup").value,
+          tglMulai: document.getElementById("glbMulai").value,
+          tglSelesai: document.getElementById("glbSelesai").value,
+          targetJurusan: document.getElementById("glbJurusan").value,
+          targetTingkat: document.getElementById("glbTingkat").value,
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          loadAdminData();
+        }).simpanGelombang(data, userProfile.role);
+      }
+
+      function handleSimpanTempat(e) {
+        e.preventDefault();
+        let data = {
+          namaInstansi: document.getElementById("tmpNama").value,
+          alamat: document.getElementById("tmpAlamat").value,
+          kontak: document.getElementById("tmpKontak").value,
+          kuotaRPL: document.getElementById("tmpRPL") ? document.getElementById("tmpRPL").value : 0,
+          kuotaTKJ: document.getElementById("tmpTKJ") ? document.getElementById("tmpTKJ").value : 0,
+          kuotaAKL: document.getElementById("tmpAKL") ? document.getElementById("tmpAKL").value : 0,
+          kuotaTLAS: document.getElementById("tmpTLAS") ? document.getElementById("tmpTLAS").value : 0,
+          kuotaTSM: document.getElementById("tmpTSM") ? document.getElementById("tmpTSM").value : 0,
+          kuotaDKV: document.getElementById("tmpDKV") ? document.getElementById("tmpDKV").value : 0
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          loadAdminData();
+        }).simpanTempatPKL(data);
+      }
+
+      function handlePengajuan(e) {
+        e.preventDefault();
+        let data = {
+          tempatId: document.getElementById("selectTempat").value
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          renderDashboard(userProfile);
+        }).ajukanTempatPKL(data, userProfile.jurusan, userProfile.nama);
+      }
+
+      function handleSimpanJurnal(e) {
+        e.preventDefault();
+        let data = {
+          siswaId: userProfile.nama,
+          tanggal: document.getElementById("jurnalTanggal").value,
+          kegiatan: document.getElementById("jurnalKegiatan").value,
+          kehadiran: document.getElementById("jurnalKehadiran").value
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          loadJurnalSiswa();
+        }).simpanJurnal(data);
+      }
+
+      function loadJurnalSiswa() {
+        let siswaId = userProfile.nama;
+        google.script.run.withSuccessHandler(list => {
+          let tbody = document.getElementById("bodyJurnalSiswa");
+          if (!tbody) return;
+          if (!list || list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" class="text-center text-muted py-3">Belum ada entri jurnal harian.</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = list.map(j => `
+            <tr>
+              <td>${j.timestamp ? j.timestamp.toString().split(' ')[0] : (j.tanggal || '-')}</td>
+              <td>${j.kegiatan}</td>
+              <td><span class="badge bg-secondary">${j.kehadiran}</span></td>
+              <td><span class="badge bg-${j.status_validasi === 'Disetujui' ? 'success' : 'warning'}">${j.status_validasi || 'Pending'}</span></td>
+              <td>${j.catatan_guru || '-'}</td>
+            </tr>
+          `).join('');
+        }).getJurnalSiswa(siswaId);
+      }
+
+      function loadAdminData() {
+        let isKaprog = (userProfile.role === 'Kaprog');
+        let jurusanFilter = isKaprog ? userProfile.jurusan : null;
+
+        if (userProfile.role !== 'Kaprog') {
+          google.script.run.withSuccessHandler(list => {
+            let el = document.getElementById("bodyTabelGelombang");
+            if (el) {
+              el.innerHTML = list.map(g => `
+                <tr>
+                  <td><strong>${g.nama_gelombang}</strong></td>
+                  <td>${g.tgl_buka_daftar} s/d ${g.tgl_tutup_daftar}</td>
+                  <td>${g.tgl_mulai_pkl} s/d ${g.tgl_selesai_pkl}</td>
+                  <td><span class="badge bg-info text-dark">${g.target_jurusan}</span></td>
+                </tr>
+              `).join('');
+            }
+          }).getGelombangList();
+        }
+
+        google.script.run.withSuccessHandler(list => {
+          cachedTempatList = list || [];
+          let el = document.getElementById("bodyTabelTempat");
+          if (el) {
+            if (list.length === 0) {
+              el.innerHTML = `<tr><td colspan="4" class="text-center text-muted py-3">Tidak ada data tempat PKL untuk jurusan ${jurusanFilter || ''}.</td></tr>`;
+              return;
+            }
+            el.innerHTML = list.map(t => `
+              <tr>
+                <td><strong>${t.nama_instansi || ''}</strong></td>
+                <td>${t.alamat || '-'}<br><small class="text-muted"><i class="bi bi-telephone me-1"></i>${t.kontak_person || t.kontak || '-'}</small></td>
+                <td>
+                  <span class="badge bg-warning text-dark badge-kuota">RPL: ${t.kuota_rpl || 0}</span>
+                  <span class="badge bg-primary badge-kuota">TKJ: ${t.kuota_tkj || 0}</span>
+                  <span class="badge bg-pink badge-kuota">AKL: ${t.kuota_akl || 0}</span>
+                  <span class="badge bg-danger badge-kuota">TLAS: ${t.kuota_tlas || 0}</span>
+                  <span class="badge bg-dark badge-kuota">TSM: ${t.kuota_tsm || 0}</span>
+                  <span class="badge bg-purple badge-kuota">DKV: ${t.kuota_dkv || 0}</span>
+                </td>
+                <td>
+                  <button class="btn btn-sm btn-warning mb-1 me-1" onclick="openEditTempatModal('${t.tempat_id}')"><i class="bi bi-pencil-square"></i> Edit</button>
+                  <button class="btn btn-sm btn-danger mb-1" onclick="hapusTempatPKLAction('${t.tempat_id}', '${t.nama_instansi}')"><i class="bi bi-trash"></i> Hapus</button>
+                </td>
+              </tr>
+            `).join('');
+          }
+        }).getTempatPKLList(jurusanFilter);
+
+        google.script.run.withSuccessHandler(groupedList => {
+          let container = document.getElementById("containerVerifikasiCards");
+          if (!container) return;
+
+          if (!groupedList || groupedList.length === 0) {
+            container.innerHTML = `<div class="col-12 text-center text-muted py-4">Tidak ada pengajuan untuk jurusan ${jurusanFilter || 'terkait'}.</div>`;
+            return;
+          }
+
+          container.innerHTML = groupedList.map(group => `
+            <div class="col-md-6 card-verifikasi-item">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-warning text-dark fw-bold d-flex justify-content-between align-items-center">
+                  <span><i class="bi bi-building me-2"></i>${group.namaTempat}</span>
+                  <span class="badge bg-dark text-white fs-8">${group.siswaList.length} / ${group.kuotaMaksimal || 0} Siswa</span>
+                </div>
+                <div class="card-body">
+                  <p class="fs-7 text-muted mb-1"><i class="bi bi-geo-alt me-1"></i>${group.alamatTempat}</p>
+                  <p class="fs-7 fw-semibold mb-3">
+                    <i class="bi bi-person-badge me-1"></i>Pembimbing: 
+                    <span class="badge ${group.pembimbing === 'Guru Pembimbing belum ditambahkan' ? 'bg-secondary' : 'bg-info text-dark'} fs-8">
+                      ${group.pembimbing}
+                    </span>
+                  </p>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-sm table-hover align-middle fs-7 mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Nama Siswa</th>
+                          <th class="col-nowrap">Kelas</th>
+                          <th>Status</th>
+                          <th class="text-end">Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${group.siswaList.length === 0 ? `
+                          <tr><td colspan="4" class="text-center text-muted py-2"><em>Belum ada siswa yang mendaftar</em></td></tr>
+                        ` : group.siswaList.map(s => `
+                          <tr>
+                            <td><strong>${s.namaSiswa}</strong></td>
+                            <td class="col-nowrap text-center">${s.kelasSiswa}</td>
+                            <td><span class="badge bg-${s.status === 'Disetujui' ? 'success' : (s.status === 'Ditolak' ? 'danger' : 'warning')} fs-8">${s.status}</span></td>
+                            <td class="text-end col-nowrap">
+                              <button class="btn btn-sm btn-success py-0 px-2 fs-8" onclick="prosesVerifikasi('${s.pengajuanId}', 'Disetujui')">Setujui</button>
+                              <button class="btn btn-sm btn-danger py-0 px-2 fs-8" onclick="prosesVerifikasi('${s.pengajuanId}', 'Ditolak')">Tolak</button>
+                              <button class="btn btn-sm btn-outline-danger py-0 px-1 fs-8" onclick="hapusPengajuan('${s.pengajuanId}')"><i class="bi bi-trash"></i></button>
+                            </td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }).getGroupedPengajuanForSurat(jurusanFilter);
+
+        if (!isKaprog) {
+          google.script.run.withSuccessHandler(gurus => {
+            let el = document.getElementById("plotGuru");
+            if (el) el.innerHTML = gurus.map(g => `<option value="${g.user_id || g.email}">${g.nama}</option>`).join('');
+          }).getGuruList();
+
+          google.script.run.withSuccessHandler(tmpt => {
+            let el = document.getElementById("plotTempat");
+            if (el) el.innerHTML = tmpt.map(t => `<option value="${t.tempat_id}">${t.nama_instansi}</option>`).join('');
+          }).getTempatPKLList(null);
+        }
+
+        loadPenugasanCards();
+      }
+
+      function prosesVerifikasi(id, status) {
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          if (userProfile.role === 'Panitia PKL') {
+            loadPanitiaData();
+          } else {
+            loadAdminData();
+          }
+        }).verifikasiPengajuan(id, status);
+      }
+
+      function hapusPengajuan(id) {
+        if (confirm("Apakah Anda yakin ingin menghapus data pengajuan ini?")) {
+          google.script.run.withSuccessHandler(res => {
+            alert(res.message);
+            loadAdminData();
+          }).hapusPengajuan(id);
+        }
+      }
+
+      function handleSimpanPlotting(e) {
+        e.preventDefault();
+        let data = {
+          guruId: document.getElementById("plotGuru").value,
+          tempatId: document.getElementById("plotTempat").value
+        };
+        google.script.run.withSuccessHandler(res => {
+          alert(res.message);
+          if (res.status === 'Success') loadAdminData();
+        }).simpanPenugasanGuru(data);
+      }
+
+      function loadJurnalGuru() {
+        let guruId = userProfile.nama || userProfile.userId || userProfile.email;
+        google.script.run.withSuccessHandler(list => {
+          let tbody = document.getElementById("bodyJurnalGuru");
+          if (!tbody) return;
+          if (!list || list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted py-3">Belum ada entri jurnal dari siswa bimbingan Anda.</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = list.map(j => `
+            <tr>
+              <td><strong>${j.namaSiswa}</strong></td>
+              <td>${j.kelasSiswa}</td>
+              <td>${j.namaTempat}</td>
+              <td>${j.tanggal}</td>
+              <td>${j.kegiatan}</td>
+              <td><span class="badge bg-secondary">${j.kehadiran}</span></td>
+              <td><span class="badge bg-${j.status_validasi === 'Disetujui' ? 'success' : 'warning'}">${j.status_validasi || 'Pending'}</span></td>
+              <td>
+                <button class="btn btn-sm btn-outline-success" onclick="validasiJurnalGuru('${j.jurnal_id}', 'Disetujui')">Setujui</button>
+              </td>
+            </tr>
+          `).join('');
+        }).getJurnalBimbinganGuru(guruId);
+      }
+
+      function validasiJurnalGuru(id, status) {
+        let catatan = prompt("Masukkan catatan evaluasi untuk siswa (opsional):", "Sesuai");
+        if (catatan !== null) {
+          google.script.run.withSuccessHandler(res => {
+            alert(res.message);
+            loadJurnalGuru();
+          }).validasiJurnal(id, catatan, status);
+        }
+      }
+    </script>
+  </body>
+</html>
